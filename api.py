@@ -1,3 +1,5 @@
+import uuid
+
 import nltk
 nltk.download('vader_lexicon', quiet=True)
 
@@ -27,7 +29,8 @@ def home():
 
 @app.post("/analyse_sentiment/")
 def analyse_sentiment(text: TextInput):
-    logger.info(f"Requête : texte à analyser = '{text.text}'")
+    request_id = str(uuid.uuid4())
+    logger.info(f"Requête {request_id} : texte à analyser = '{text.text}'") # si plusieurs requêtes en meme temps pour différencier dans les logs
     try:
         scores = sia.polarity_scores(text.text)
         result = {
@@ -36,8 +39,8 @@ def analyse_sentiment(text: TextInput):
             "pos": scores["pos"],
             "compound": scores["compound"],
         }
-        logger.debug(f"Résultat : {result}")
+        logger.info(f"Requête {request_id} : Résultat = {result}")
         return result
     except Exception as e:
-        logger.error(f"Erreur '{text.text}' : {e}")
+        logger.error(f"Requête {request_id} : Erreur '{text.text}' : {e}")
         return JSONResponse(status_code=500, content={"detail": "Erreur interne du serveur"})
