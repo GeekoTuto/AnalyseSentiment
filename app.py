@@ -22,13 +22,13 @@ def get_sentiment_text(compound_score: float) -> str:
 logger.remove()
 logger.add("logs/sentiment_streamlit.log", rotation="500 MB", level="INFO")
 
-st.set_page_config(page_title="Analyse de sentiment", layout="centered")
+st.set_page_config(page_title="Analyse de sentiments", layout="centered")
 
-st.title("Analyse de sentiment")
+st.title("Analyse de sentiments")
 st.write("Entrez un texte")
 
 api_url = st.text_input("URL API", value=API_URL)
-text = st.text_area("Texte a analyser", height=150, placeholder="Exemple : I love this App !")
+text = st.text_area("Texte à analyser", height=150, placeholder="Exemple : I love this App !") #car ça marche mieux en anglais pour moi
 
 if st.button("Analyser", type="secondary"):
 	if not text.strip():
@@ -43,7 +43,7 @@ if st.button("Analyser", type="secondary"):
 
 			st.success(f"Sentiment : {sentiment_text}")
 			st.metric("Score global", f"{result['compound']:.4f}")
-			st.subheader("Details")
+			st.subheader("Détails")
 			logger.info(f"Résultat API : {result}")
 			logger.info(f"Sentiment global : {sentiment_text}")
 			st.json(result)

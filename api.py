@@ -13,6 +13,7 @@ import os
 from transformers.tokenization_utils_base import TextInput
 
 os.makedirs("logs", exist_ok=True)
+logger.remove()
 logger.add("logs/sentiment_api.log", rotation="500 MB", level="INFO")
 
 app = FastAPI()
