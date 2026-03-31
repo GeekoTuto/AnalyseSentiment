@@ -1,2 +1,36 @@
 2026-03-31 11:25:02.913 | INFO     | apitest:analyse_sentiment:30 - Requête : texte='J'adore ce produit'
 2026-03-31 11:25:19.465 | INFO     | apitest:analyse_sentiment:30 - Requête : texte='C'est super'
+2026-03-31 11:34:55.378 | INFO     | api:analyse_sentiment:30 - Requête : texte='test'
+2026-03-31 11:43:01.275 | INFO     | api:analyse_sentiment:30 - Requête : texte='c'est complètement nul'
+2026-03-31 11:43:08.733 | INFO     | api:analyse_sentiment:30 - Requête : texte='je n'aime pas'
+2026-03-31 11:43:17.045 | INFO     | api:analyse_sentiment:30 - Requête : texte='je suis dégouté'
+2026-03-31 11:43:28.385 | INFO     | api:analyse_sentiment:30 - Requête : texte='i hate this product'
+2026-03-31 11:49:02.945 | INFO     | api:analyse_sentiment:30 - Requête : texte='test'
+2026-03-31 11:49:15.272 | INFO     | api:analyse_sentiment:30 - Requête : texte='hate you'
+2026-03-31 11:49:53.874 | INFO     | api:analyse_sentiment:30 - Requête : texte='test'
+2026-03-31 12:04:35.451 | INFO     | api:analyse_sentiment:30 - Requête : texte='
+test'
+2026-03-31 12:05:20.328 | INFO     | api:analyse_sentiment:30 - Requête : texte='test'
+2026-03-31 13:08:07.408 | INFO     | api:analyse_sentiment:30 - Requête : texte='hate you'
+2026-03-31 13:08:23.972 | INFO     | api:analyse_sentiment:30 - Requête : texte='I really hate this product'
+2026-03-31 13:13:42.727 | INFO     | api:home:24 - Test api
+2026-03-31 13:14:22.138 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'disgusting'
+2026-03-31 13:37:40.131 | INFO     | api:home:24 - Test api
+2026-03-31 13:38:21.812 | INFO     | api:home:24 - Test api
+2026-03-31 13:38:21.818 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'Love this app !'
+2026-03-31 13:42:07.934 | INFO     | api:home:24 - Test api
+2026-03-31 13:42:07.965 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'Love this app !'
+2026-03-31 13:42:07.970 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I hate this app !'
+2026-03-31 13:42:41.848 | INFO     | api:home:24 - Test api
+2026-03-31 13:42:41.875 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'Love this app !'
+2026-03-31 13:42:41.881 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I hate this app !'
+2026-03-31 13:55:58.818 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'test'
+2026-03-31 13:56:08.392 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'je te déteste'
+2026-03-31 13:56:17.320 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'i hate you'
+2026-03-31 14:08:15.514 | INFO     | api:home:24 - Test api
+2026-03-31 14:08:15.520 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I Love this app !'
+2026-03-31 14:08:15.525 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I hate this app !'
+2026-03-31 14:08:26.503 | INFO     | api:home:24 - Test api
+2026-03-31 14:08:26.510 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I Love this app !'
+2026-03-31 14:08:26.515 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I hate this app !'
+2026-03-31 14:08:26.520 | INFO     | api:analyse_sentiment:30 - Requête : texte à analyser = 'I feel normal.'

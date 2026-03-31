@@ -22,14 +22,14 @@ class TextInput(BaseModel):
 @app.get("/")
 def home():
     logger.info("Test api")
-    return {"message": "API running"}
+    return {"message": "L'API marche correctement"}
 
 
 @app.post("/analyse_sentiment/")
-def analyse_sentiment(payload: TextInput):
-    logger.info(f"Requête : texte='{payload.text}'")
+def analyse_sentiment(text: TextInput):
+    logger.info(f"Requête : texte à analyser = '{text.text}'")
     try:
-        scores = sia.polarity_scores(payload.text)
+        scores = sia.polarity_scores(text.text)
         result = {
             "neg": scores["neg"],
             "neu": scores["neu"],
@@ -39,5 +39,5 @@ def analyse_sentiment(payload: TextInput):
         logger.debug(f"Résultat : {result}")
         return result
     except Exception as e:
-        logger.error(f"Erreur '{payload.text}' : {e}")
-        return JSONResponse(status_code=500, content={"detail": "Erreur"})
+        logger.error(f"Erreur '{text.text}' : {e}")
+        return JSONResponse(status_code=500, content={"detail": "Erreur interne du serveur"})
