@@ -1,5 +1,7 @@
 # SIMPLON_M0BRIEF1
 
+Application d'Analyse de sentiment. L'utilisateur entre un texte en anglais et l'application analysera quel sentiment s'en dégage.
+
 ## Prerequis
 
 - Python
@@ -35,6 +37,49 @@ L'URL concernée par la requête post du Front :
 ```text
 http://127.0.0.1:8001/analyse_sentiment/
 ```
+
+## Architecture
+
+### Structure globale
+
+Architecture **API + Client** :
+
+```
+Client Streamlit (app.py)
+        ↓ (requête POST)
+    API FastAPI (api.py)
+        ↓ (traitement)
+    Moteur VADER
+        ↓ (scores)
+    Réponse JSON
+```
+
+### Composants
+
+#### 1. **API FastAPI** (`api.py`)
+L'API REST qui traite l'analyse de sentiment :
+- **Port** : 8001
+- **GET** `/` : Vérification que l'API est fonctionnelle
+- **POST** `/analyse_sentiment/` : Analyse le texte fourni
+  - Entrée : texte JSON (`{"text": "..."}`).
+  - Sortie : scores de sentiment sous forme JSON
+    - `neg` : score de négativité
+    - `neu` : score de neutralité
+    - `pos` : score de positivité
+    - `compound` : score global
+- **Analyse** : VADER 
+
+#### 2. **Interface Streamlit** (`app.py`)
+Application web interactive pour l'utilisateur :
+- Champ de saisie : l'utilisateur entre un texte en **anglais**
+- Bouton "Analyser" : envoie une requête POST à l'API
+- Affichage des résultats :
+  - Interprétation globale du sentiment (Positif 😀 / Neutre 😐 / Négatif 🙁)
+
+#### 3. **Logging**
+Système de log :
+- `logs/sentiment_api.log` : logs de l'API 
+- `logs/sentiment_streamlit.log` : logs client
 
 ## Tests unitaires
 
