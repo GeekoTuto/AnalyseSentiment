@@ -111,10 +111,16 @@ Cette application Streamlit permet à l’utilisateur de charger une image, de r
 - Liste des 5 classes principales détectées
 - Affichage de la description globale de l’image et du résumé  
 
+### Backend (FastAPI)
+- Endpoint `POST /analyse_image/` (multipart/form-data)
+- Segmentation avec SegFormer
+- Description globale et par segment avec BLIP
+- Résumé avec Distilbart
+
 
 - **Segmentation** : `SegformerForSemanticSegmentation` 
 - **Description d’image** : `BLIPForConditionalGeneration`
-- **Résumé** : `DistilBART`
+- **Résumé** : `Distilbart`
 
 ### Comment ça marche :  
 1. L’utilisateur charge une image → Segformer génère la segmentation  

@@ -5,7 +5,10 @@ transformers
 torch
 torchvision
 sentencepiece
+numpy
+pillow
 requests
 loguru
 nltk
 pytest
+python-multipart
